@@ -13,12 +13,16 @@ Apptagg admin: **Admin > Shops > Add Shop**. Copy the API key shown once (`shk_.
 
 ## 2. Install
 
-Until the package is on a private Git server, use a path repository:
+```bash
+composer require freebirds/apptagg-shop
+php artisan vendor:publish --tag=apptagg-config
+```
+
+Not on Packagist yet? Add the GitHub repository first:
 
 ```bash
-composer config repositories.apptagg-shop '{"type":"path","url":"../apptagg-shop-sdk","options":{"symlink":true}}'
-composer require "freebirds/apptagg-shop:*@dev"
-php artisan vendor:publish --tag=apptagg-config
+composer config repositories.apptagg-shop vcs https://github.com/freebirds-com/apptagg-shop.git
+composer require freebirds/apptagg-shop:^1.0
 ```
 
 `.env`:
